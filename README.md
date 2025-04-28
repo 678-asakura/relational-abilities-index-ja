@@ -1,6 +1,5 @@
 
 # Relational Abilities Index - 日本語版
----
 このプログラムは，[Relational Abilities Index](https://github.com/JamieCummins/relational-abilities-index)(RAI) を日本語に翻訳し，Webブラウザから実施可能なプログラムとして開発されています。
 **Node.js** 環境で動作し，**server.js**があるディレクトリでターミナルを起動し，`npm run start` によって起動できます。
 
@@ -118,7 +117,7 @@ npm run start
 
 ---
 # Relational Abilities Index - Japanese Version
----
+
 >##### 📢 Attribution Notice
 >###### Parts of this documentation were created or refined with the assistance of AI tools to improve clarity and readability.
 
