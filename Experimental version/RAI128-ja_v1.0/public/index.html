@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relational Abilities Index</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- 表紙 -->
+    <div id="welcome-section">
+        <div class="inner-card">
+            <div class="d-flex flex-column justify-content-center align-items-center h-100">
+                <h1>Relational Abilities Index</h1>
+                <p>日本語版</p>
+                <button class="btn btn-primary" onclick="showParticipantIDSection()">ようこそ</button>
+            </div>
+        </div>
+    </div>
+
+<!-- 参加者ID入力画面 -->
+<div id="participant-id-section" class="hidden">
+    <div class="inner-card">
+        <div class="d-flex flex-column justify-content-center align-items-center h-100">
+            <h1>参加者情報を入力してください</h1>
+            <input type="text" id="participant-id-input" class="form-control" autocomplete="off" placeholder="参加者IDを入力">
+            <input type="email" id="email-input" class="form-control mt-2" autocomplete="off" placeholder="メールアドレスを入力">
+            <div class="d-flex justify-content-center align-items-center mt-2">
+                <select id="age-input" class="form-control mr-2">
+                    <option value="" disabled selected>年齢を選択</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">30以上</option>
+                </select>
+                <select id="gender-input" class="form-control">
+                    <option value="" disabled selected>性別を選択</option>
+                    <option value="男性">男性</option>
+                    <option value="女性">女性</option>
+                    <option value="その他">その他</option>
+                </select>
+            </div>
+            <button class="btn btn-primary mt-3" onclick="validateParticipantID()">次へ</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <!-- 課題説明画面 -->
+    <div id="instructions-section" class="hidden">
+        <div class="inner-card">
+            <div id="instruction" class="d-flex flex-column justify-content-center align-items-center h-100">
+                <h1>課題説明</h1>
+                <div class="explanation-box">
+                        それぞれの問題は，架空の単語とその関係についての2つから4つの文章で構成されています。
+                        <br>(例:「<u><b>ガアン</b> は <b>ヨオレ</b> と同じである</u>，<u><b>ヨオレ</b> は <b>ルウボ</b> と 同じである</u>」)
+                        <br>
+                        <br>また，これらの文章の下には，
+                        <br>「<u><b>ガアン</b> は <b>ルウボ</b> と違いますか？</u>」などの単語の関係についての質問があります。
+                        <br>
+                        <br>あなたの課題は，与えられた情報に基づいて，
+                        <br>画面下の <div class="btn btn-success"><b>はい</b></div> か <div class="btn btn-danger"><b>いいえ</b></div>
+                        のボタンをクリックして，質問にできるだけ正確に答えることです。
+                        <br>
+                        <br>それぞれの問いの回答時間は30秒です。
+                        <br>準備ができたら「課題を開始する」をクリックしてください。がんばりましょう！
+                        </p>
+                </div>
+                <br><button class="btn btn-primary" onclick="startSurvey()" id="start-button">課題を開始する</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 質問回答画面 -->
+    <div id="survey-section" class="hidden">
+        <div class="inner-card">
+            <div id="timer-card" class="timer-card">
+                <div id="timer" class="timer">30</div>
+            </div>
+            <div id="counter-card" class="counter-card">
+                <div id="counter" class="counter">01/32</div>
+            </div>
+            <div id="progress-boxes-survey" class="progress-boxes"></div>
+            <div class="relation-container">
+                <div id="relation-text" class="relation-text"></div>
+            </div>
+            <div class="question-container">
+                <div id="question-text" class="question"></div>
+            </div>
+            <div class="button-container">
+                <div class="btn-left" id="button-left"></div>
+                <div class="btn-right" id="button-right"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 終了時の感謝の画面 -->
+    <div id="thank-you-section" class="hidden">
+        <div class="inner-card">
+            <div id="progress-boxes-thank-you" class="progress-boxes"></div>
+            <div class="d-flex flex-column justify-content-center align-items-center h-100">
+                <h1>ご協力ありがとうございました！</h1>
+                <p>課題が終了したことを実験者にお伝えください。</p>
+                <div id="error-button-container" class="hidden">
+                    <p>データが記録できませんでした。</p>
+                    <button class="btn btn-warning" onclick="retrySubmission()">再送信</button>
+                    <button class="btn btn-secondary" onclick="downloadCSV()">CSVとしてダウンロード</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

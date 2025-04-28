@@ -1,0 +1,196 @@
+:root {
+    --FontSize: calc(min(100dvw, 100dvh * 16 / 10) * 10 / 16 * 0.023);
+    --elSize: calc(min(100dvw, 100dvh * 16 / 10) * 10 / 16 * 0.02);
+}
+
+body,
+html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e9ecef;
+    margin: 0;
+    font-family: "Roboto Mono", "Noto Sans JP", sans-serif;
+    font-size: var(--FontSize);
+}
+
+h1 { font-size: calc(var(--FontSize) * 2   );}
+h2 { font-size: calc(var(--FontSize) * 1.5 );}
+h3 { font-size: calc(var(--FontSize) * 1.17);}
+h4 { font-size: calc(var(--FontSize) * 1   );}
+h5 { font-size: calc(var(--FontSize) * 0.83);}
+h6 { font-size: calc(var(--FontSize) * 0.67);}
+
+.main-card {
+    width:  min(85dvw, calc(85dvh * 16 / 10));
+    height: min(calc(85dvw * 10 / 16), 85dvh);
+    background: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.center-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.explanation-box {
+    width: 90%;
+    height: 80%;
+    border: 1px solid #000;
+    padding: 3%;
+    text-align: left;
+    background-color: white;
+}
+
+.counter-card {
+    width:  calc(var(--elSize) * 7);
+    height: calc(var(--elSize) * 7);
+    position: absolute;
+    top:    calc(var(--elSize) * 1.5);
+    right:  calc(var(--elSize) * 1.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: calc(var(--elSize) * 1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.timer-card {
+    width:  calc(var(--elSize) * 7);
+    height: calc(var(--elSize) * 7);
+    position: absolute;
+    top:    calc(var(--elSize) * 11);
+    right:  calc(var(--elSize) * 1.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #6b6b6b;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.timer {
+    font-size: calc(var(--FontSize) * 1.8);
+    color: white;
+    font-weight: bold;
+}
+
+.counter {
+    font-size: calc(var(--FontSize) * 1.3);
+    color: white;
+    font-weight: bold;
+}
+
+.progress-boxes {
+    position: absolute;
+    top: calc(var(--elSize) * 0.1);
+    right: calc(var(--elSize) * -4.5);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.progress-box {
+    width:  calc(var(--elSize) * 3);
+    height: calc(var(--elSize) * 3);
+    border-radius: calc(var(--elSize) * 0.7);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: calc(var(--elSize) * 0.7);
+    background-color: orange;
+}
+
+.progress-box.completed {
+    background-color: rgb(0, 140, 255);
+}
+
+.relation-container {
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.question-container {
+    flex: 0 0 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.question {
+    font-size: calc(var(--FontSize) * 2);
+}
+.questionText {
+    font-size: calc(var(--FontSize) * 2.4);
+    font-weight: bold;
+}
+
+.relational-text {
+    font-size: calc(var(--FontSize) * 1.6);
+}
+.stimulus-text {
+    font-size: calc(var(--FontSize) * 2);
+    font-weight: bold;
+}
+.relation-text div {
+    margin-bottom: calc(var(--FontSize) * 0.8);
+}
+
+
+.button-container {
+    flex: 0 0 30%;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.btn-left,
+.btn-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-container .btn {
+    width:     calc(var(--FontSize) * 12);
+    height:    calc(var(--FontSize) * 6);
+    font-size: calc(var(--FontSize) * 2.2);
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.preparation-screen {
+    font-size: calc(var(--FontSize) * 9);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}

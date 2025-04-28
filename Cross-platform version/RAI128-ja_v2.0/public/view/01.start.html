@@ -1,0 +1,38 @@
+<div id="mainContent" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="d-flex flex-column justify-content-center align-items-center h-100">
+        <h1>参加者情報を入力してください</h1>
+        <input type="text" id="ID-input" class="form-control" autocomplete="off" placeholder="参加者IDを入力">
+        <input type="email" id="email-input" class="form-control mt-2" autocomplete="off" placeholder="メールアドレスを入力">
+        <div class="d-flex justify-content-center align-items-center mt-2">
+            <select id="age-input" class="form-control mr-2">
+                <option value="" disabled selected>年齢を選択</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">30以上</option>
+            </select>
+            <select id="gender-input" class="form-control">
+                <option value="" disabled selected>性別を選択</option>
+                <option value="男性">男性</option>
+                <option value="女性">女性</option>
+                <option value="その他">その他</option>
+            </select>
+        </div>
+            <button class="btn btn-primary" 
+                data-fn="sendInfo" 
+                data-view="./view/02.description.html" 
+                data-target="#mainContent">
+                次へ
+            </button> 
+        </div>
+</div>
